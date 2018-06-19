@@ -1,0 +1,180 @@
+@import "../stars/stars-template.wxss";
+.movie-container {
+   width: 750rpx; 
+  /* height: 1200rpx; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.head-img {
+  width: 100%;
+  height: 320rpx;
+   -webkit-filter: blur(20px); 
+}
+/* 注意此处的width不能超出父容器的宽度 */
+.head-img-hover {
+  display: flex;
+  flex-direction: column;
+  /* width: 500rpx; */
+  /* height: 270rpx; */
+  width: 600rpx;
+  height: 320rpx;
+  position: absolute;
+  top: 54rpx;
+  left: 60rpx;
+  margin-right: 40rpx;
+  color: #fff;
+}
+
+.main-title {
+  font-size: 19px;
+  font-weight: bold;
+  margin-bottom: 40rpx;
+  letter-spacing: 2px;
+}
+
+.header-country-year {
+  font-size: 32rpx;
+  margin-bottom: 40rpx;
+}
+
+.header-like-comment text{
+  margin-right: 40rpx;
+}
+
+.like-num, .comment-num {
+  color: #f21146;
+}
+
+.like-text, .comment-text {
+  color: #999;
+}
+
+.header-top-right {
+  position: absolute;
+  top: 160rpx;
+  right: 40rpx;
+}
+
+.movie-img {
+  width: 180rpx;
+  height: 250rpx;
+}
+
+.center-top,.center-bottom {
+  /* width: 100%; */
+  /* height: 320rpx; */
+  /* width: 85%; */
+  display: flex;
+  flex-direction: column;
+  padding: 60rpx;
+  color: #777777;
+  /* background-color: #f2f2f2; */
+  /* border-bottom: 1px dashed #666; */
+}
+
+.center-top-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #1f3463;
+  margin-bottom: 40rpx;
+}
+
+.center-bottom-title, .bottom-title {
+  font-size: 30rpx;
+  color: #999;
+  margin-bottom: 40rpx;
+}
+
+.movie-summary {
+   /* width: 90%;  */
+  font-size: 24rpx;
+  color: #666;
+  line-height: 44rpx;
+  text-indent: 2em;
+  letter-spacing: 1px;
+  margin: 0 auto; 
+}
+
+.center-row {
+  display: flex;
+  flex-direction: row;
+  height: 36rpx;
+  line-height: 36rpx;
+  margin-top: 20rpx; 
+}
+
+.col-1 {
+  /* height: 36rpx; */
+  width: 75rpx;
+  color: #999999;
+  margin-right: 60rpx;
+  white-space: nowrap;
+}
+
+.col-2 {
+  width: 386px;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* margin-right: 60rpx; */
+}
+
+.hr {
+  width: 100%;
+  height: 1px;
+  background-color: #d9d9d9;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column; 
+  padding: 60rpx; 
+  background-color: #f2f2f2;
+}
+
+.casts-container{
+  width: 100%;
+  white-space: nowrap;
+}
+
+.cast-info {
+  width: 180rpx;
+  /* float: left; */
+  margin-right: 40rpx;
+  display:inline-flex;
+  flex-direction: column;
+  /* margin-bottom: 50rpx; */
+  text-align:center;
+  white-space: normal;
+}
+
+.cast-avatar {
+  width: 100%;
+  height: 210rpx;
+}
+
+.cast-name {
+  font-size: 24rpx;
+  text-align: center;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  margin: 10rpx auto 0;
+  word-break: break-all;
+}
+
+.stars image {
+  width: 20rpx;
+  height:20rpx;
+  padding-right:5rpx;
+}
+
+.stars-score {
+  font-size: 22rpx;
+  padding-top: 3rpx;
+}

@@ -1,0 +1,49 @@
+<!-- 引入模板的wxml文件 -->
+<import src="post-item/post-item-template.wxml" />
+<view>
+  <!-- swiper组件,运用事件冒泡机制 -->
+  <swiper class='banner' indicator-dots="true" autoplay='true' interval='4000' duration='600' catchtap="onSwiperTap">
+    <!-- 注意for循环要写在swiper-item上！ -->
+    <swiper-item wx:for="{{swiper_key}}" wx:key="swiper-banner">
+      <image src='{{item.swiperImgSrc}}' class='banner-item' data-swiper-id="{{item.swiperId}}"></image>
+    </swiper-item>
+  </swiper>
+  <!-- 列表渲染 -->
+  <block wx:for="{{post_key}}" wx:key="news-list" wx:for-item="item" wx:for-index="idx">
+    <!-- template标签不会被解析，因此外层套一层view用于事件绑定！ -->
+    <view catchtap="onPostDetail" data-post-id="{{item.postId}}">
+      <!-- 使用模板 -->
+      <template is="post-item" data="{{...item, idx}}">
+        <!-- <template is="collection-reading" data="{{...item, idx}}"></template> -->
+      </template>
+    </view>
+    <!-- <view class="post-container">
+      <view class="post-author-date">
+        <image class="post-author" src="{{item.avatar}}"></image>
+        <text class="post-date">{{item.date}}</text>
+      </view>
+      <text class="post-title">{{idx+1}}、{{item.title}}</text>
+      <image class='post-image' src="{{item.imgSrc}}"></image>
+      <text class='post-content'>{{item.content}}</text>
+      <view class='post-like'>
+        <image src='/images/icon/chat.png' class='post-star'></image>
+        <text class='post-star-num'>{{item.collection}}</text>
+        <image src='/images/icon/view.png' class="post-view"></image>
+        <text class='post-view-comment'>{{item.reading}}</text>
+      </view>
+    </view> -->
+  </block>
+  <!-- <button type='primary' bindtap='onClearTap'>清除缓存</button>
+  <button type='primary' bindtap='onChooseAddressTap'>选择收货地址</button>
+  <button type='primary' bindtap='onChooseInvoiceTitleTap'>获取发票抬头</button>
+  <button type='primary' bindtap='onNavigateMiniProgramTap' data-url="{{webUrl}}">打开小程序</button>
+  <view class='form-controller'>
+    <form name="payForm" report-submit bindsubmit="orderSign">
+      <label for="place">购买地点：</label><input type="text" name="place" value=""></input>
+      <label for="time">购买时间：</label><input type="text" name="time" value=""></input>
+      <label for="name">购买名称：</label><input type="text" name="name" value=""></input>
+      <label for="orderId">购买单号：</label><input type="text" name="orderId" value=""></input>
+      <button type='warn' form-type="submit">提交订单</button>
+    </form>
+  </view> -->
+</view>

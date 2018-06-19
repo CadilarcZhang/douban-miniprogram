@@ -1,0 +1,34 @@
+<import src="../movie-item/movie-template.wxml" />
+<template name="movieList-template">
+  <view class="movieList-container">
+    <view class='inner-container'>
+      <view class='movieList-header'>
+        <text class="slogan">{{categary}}</text>
+        <view class="refresh" data-type="{{type}}" data-start-num="{{startNum}}" 
+          data-categary="{{categary}}" catchtap="onReloadTap">
+          <image class="refresh-img" src="/images/icon/reload.png"></image>
+          <text>换一批</text>
+        </view>
+        <view class='movie-more' bindtap='onMoreMoviesTap' data-categary="{{categary}}">
+          <text class="text-more">更多</text>
+          <image src="/images/icon/arrow-right.png"></image>
+        </view>
+      </view>
+      <view class="movie-list">
+        <block wx:for="{{movies[0]}}" wx:for-item="movie" wx:key="movies-list">
+          <template is="movie-template" data="{{...movie}}"/>
+        </block> 
+      </view>
+      <view class="movie-list">
+        <block wx:for="{{movies[1]}}" wx:for-item="movie" wx:key="movies-list">
+          <template is="movie-template" data="{{...movie}}"/>
+        </block> 
+      </view>
+      <!-- <view wx:if="{{movies==null}}" class="movie-list">
+        <block wx:for="{{movies}}" wx:for-item="movie" wx:key="movies-list">
+          <template is="movie-template" data="{{...movie, index}}"/>
+        </block> 
+      </view> -->
+    </view>
+  </view>
+</template>

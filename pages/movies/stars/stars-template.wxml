@@ -1,0 +1,19 @@
+<template name="stars-template">
+  <view class="stars-container">
+    <view class="stars">
+      <block wx:for="{{starsArr}}" wx:key="star-list">
+         <!-- <image src="/images/icon/{{(item==1)?'star.png':'none-star.png'}}"></image>   -->
+         <image wx:if="{{item==1}}" src="/images/icon/star.png"></image>
+         <image wx:if="{{item==0.5}}" src="/images/icon/wx_app_star@half.png"></image>
+         <image wx:if="{{item==0}}" src="/images/icon/none-star.png"></image>
+         <!-- <image wx:if="{{item}}" src="/images/icon/star.png"></image> 当item==1时，wx:if=true;item=0时为false  -->
+         <!-- <image class="none-star" wx:else src="/images/icon/none-star.png"></image>    -->
+      </block>
+      <!-- <image src="/images/icon/star.png"></image>
+      <image src="/images/icon/star.png"></image>
+      <image src="/images/icon/star.png"></image>
+      <image src="/images/icon/star.png"></image> -->
+    </view>
+    <text class="stars-score">{{score}} 分</text>
+  </view>
+</template>

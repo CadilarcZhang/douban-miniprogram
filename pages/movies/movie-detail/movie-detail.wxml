@@ -1,0 +1,62 @@
+<import src="../stars/stars-template.wxml"/>
+<view class="movie-container" wx:if="{{readyShow}}">
+  <!-- 默认不给定图片宽和高，默认是320px*250px -->
+  <image class="head-img" src="{{movie.movieImg}}" mode="aspectFill" 
+    data-img-src="{{movie.movieImg}}" bindtap="onPreviewImgTap"></image>
+  <view class="head-img-hover" data-img-src="{{movie.movieImg}}" bindtap="onPreviewImgTap">
+    <text class="main-title">{{movie.title}}</text>
+    <text class="header-country-year">{{movie.country}}  · {{movie.year}}</text>
+    <view class="header-like-comment">
+      <text class="like-num">{{movie.wish_count}}</text>
+      <text class="like-text">喜欢</text>
+      <text class="comment-num">{{movie.comments_count}}</text>
+      <text class="comment-text">条评论</text>
+    </view>
+  </view>
+  <view class="header-top-right">
+    <image class="movie-img" src="{{movie.movieImg}}" data-img-src="{{movie.movieImg}}" catchtap="onPreviewImgTap"></image>
+  </view>
+  <view class="center-top">
+    <view class="center-top-title">
+      {{movie.original_title}}
+    </view>
+    <view class="center-row">
+      <text class="col-1">评分</text>
+      <view class="col-2">
+        <!-- <template is="stars-template" data="{{...movie.stars}}"/> -->
+        <template is="stars-template" data="{{starsArr: movie.starsArr, score: movie.score}}"/>
+      </view>
+    </view>
+    <view class="center-row">
+      <text class="col-1">导演</text>
+      <text class="col-2">{{movie.director.name}}</text>
+    </view>
+    <view class="center-row">
+      <text class="col-1">影人</text>
+      <text class="col-2">{{movie.casts_names}}</text>
+    </view>
+    <view class="center-row">
+      <text class="col-1">类型</text>
+      <text class="col-2">{{movie.genres}}</text>
+    </view>
+  </view>
+  <view class="hr"></view>
+  <view class="center-bottom" wx:if="{{summaryShow}}">
+    <view class="center-bottom-title">剧情简介</view>
+    <view class="movie-summary">{{movie.summary}}</view>
+  </view>
+  <view class="hr"></view>
+  <view class="bottom">
+    <text class="bottom-title">影人</text>
+      <scroll-view class="casts-container" scroll-x="true">  
+     <!-- <view class="cast-container"> -->
+        <block wx:for="{{movie.casts_infos}}" wx:for-item="cast" wx:key="castArray">
+          <view class="cast-info" data-cast-id="{{cast.id}}" catchtap="onCastDetailTap">
+            <image class="cast-avatar" src="{{cast.avatar}}"/>
+            <view class="cast-name">{{cast.name}}</view>
+          </view>
+        </block>
+      <!-- </view> -->
+      </scroll-view>  
+  </view>
+</view>

@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/posts/posts",
+    "pages/posts/post-detail/post-detail",
+    "pages/movies/movies",
+    "pages/movies/more-movies/more-movies",
+    "pages/movies/movie-detail/movie-detail",
+    "pages/movies/cast-detail/cast-detail",
+    "pages/ydbg/ydbg",
+    "pages/setting/setting"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#405f80",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "小程序启动页",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/movies/movies",
+        "text": "电影",
+        "iconPath": "images/tab/dianying.png",
+        "selectedIconPath": "images/tab/dianying_hl.png"
+      },
+      {
+        "pagePath": "pages/posts/posts",
+        "text": "文字",
+        "iconPath": "images/icon/news/wx_app_news.png",
+        "selectedIconPath": "images/icon/news/wx_app_news@HL.png"
+      },
+      {
+        "pagePath": "pages/setting/setting",
+        "text": "设置",
+        "iconPath": "images/icon/news/wx_app_setting.png",
+        "selectedIconPath": "images/icon/news/wx_app_setting@HL.png"
+      }
+    ]
+  },
+  "borderStyle": "white",
+  "backgroundColor": "#405f80",
+  "networkTimeout": {
+    "request": 20000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
+  }
+}

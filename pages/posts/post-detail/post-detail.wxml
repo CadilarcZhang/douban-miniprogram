@@ -1,0 +1,29 @@
+<!-- <text>这是新闻详情页</text> -->
+<view class="detail-container">
+  <!-- <image class='detail-image' bindtap='onMusicTap' src='{{isPlayingMusic?post.music.coverImg:post.headImgSrc}}'></image> -->
+  <image class='detail-image' bindtap='onMusicTap' src='{{isPlayingMusic?post.music.coverImg:post.imgSrc}}'></image>
+  <image class='audio-image' bindtap='onMusicTap'
+     src="{{isPlayingMusic?'/images/music/music-stop.png':'/images/music/music-start.png'}}"></image>
+  <view class='auther-date'>
+    <image class='avatar' src='{{post.avatar}}'></image>
+    <text class='author'>{{post.author}}</text>
+    <text class='publish'>发表于</text>
+    <text class='date'>{{post.dateTime}}</text>
+  </view>
+  <view class='title'>{{post.title}}</view>
+  <view class='tool'>
+    <view class='share-collection'>
+      <image wx:if="{{shared}}" class='share' 
+        src='/images/icon/share.png' bindtap='onShareTap'></image>
+      <image wx:else class='share' 
+        src='/images/icon/share-anti.png' bindtap='onShareTap'></image>
+      <image wx:if="{{collected}}" catchtap='onCollectionTap'
+          class='collection' src='/images/icon/collection.png'></image>
+      <image wx:else class='collection' catchtap='onCollectionTap'
+          src='/images/icon/collection-anti.png'></image>
+    </view>
+    <view class='separate-line'></view>
+  </view>
+  <text class='detail-content'>{{post.detail}}</text>
+  <button type="warn" open-type="share" bindtap="onShareAppTap" class="share-btn">转发给好友</button>
+</view>

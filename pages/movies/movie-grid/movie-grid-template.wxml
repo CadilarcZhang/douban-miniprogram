@@ -1,0 +1,20 @@
+<import src="../movie-item/movie-template.wxml"/>
+<template name="movieGridTemplate">
+<!-- <scroll-view class="movie-scroll" scroll-y> -->
+  <!-- <scroll-view class="grid-container" scroll-y scroll-x="false" bindscrolltolower="onScollToLower">
+    <block wx:for="{{movies}}" wx:for-item="movie" wx:key="gridMovies">
+      <view class="inner-view-container">
+        <template is="movie-template" data="{{...movie, index}}"/>
+      </view>
+    </block>
+  </scroll-view> -->
+  <!-- 新版本的小程序scroll-view组件里不响应onPullDownRefresh事件！ -->
+  <view class="grid-container" scroll-y scroll-x="false">
+    <block wx:for="{{movies}}" wx:for-item="movie" wx:key="gridMovies">
+      <view class="inner-view-container">
+        <template is="movie-template" data="{{...movie, index}}"/>
+      </view>
+    </block>
+  </view>
+<!-- </scroll-view> -->
+</template>

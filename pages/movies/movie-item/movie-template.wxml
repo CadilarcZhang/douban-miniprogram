@@ -1,0 +1,13 @@
+<import src="../stars/stars-template.wxml" />
+<template name="movie-template">
+  <!-- <view class="movie-container">
+      <image class="movie-image" src="/images/yourname.jpg"></image>
+      <text class="movie-name">你的名字</text>
+      <template is="stars-template"/>
+  </view> -->
+  <view class="movie-container" catchtap="onMovieTap" data-movie-id="{{movieId}}">
+      <image class="movie-image" src="{{coverImageUrl}}"></image>
+      <text class="movie-name">{{title}}</text>
+      <template is="stars-template" data="{{score, starsArr}}"/>
+  </view>
+</template>

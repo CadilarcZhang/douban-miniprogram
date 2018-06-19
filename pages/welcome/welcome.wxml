@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="avatar">
+    <!-- <image src='/images/avatar.png'></image> -->
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type='getUserInfo' bindgetuserinfo='getUserInfo'>点击获取头像信息</button>
+    <block wx:else>
+      <image src="{{userInfo.avatarUrl?userInfo.avatarUrl:'/images/avatar.png'}}" 
+        class='userinfo-avatar' background-size="cover"></image>
+      <text class='userInfo-nickname'>{{userInfo.nickName}}</text>  
+    </block>
+  </view>
+  <text class='user-name'>
+    {{miniprogram}}, 你好！
+  </text>
+  <!-- <image class='userinfo-avatar'> -->
+    <!-- <open-data type="userNickName"></open-data> -->
+  <!-- </image> -->
+  <view hover-class="index-hover" class='motto-container' bindtap="onContainerTap">
+    <!-- <open-data type="userNickName"></open-data>， -->
+    <text catchtap="onSubTap">开启小程序之旅</text>
+  </view>
+</view>

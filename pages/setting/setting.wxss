@@ -1,0 +1,13 @@
+/* pages/setting/setting.wxss */
+.form-controller {
+  background-color: #0000ff;
+}
+label, input {
+  display: inline-block;
+  background-color: #f2f2f2;
+  margin-left: 20rpx;
+}
+input {
+  position:relative;
+  top:12rpx;
+}

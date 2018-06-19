@@ -1,0 +1,4 @@
+<import src="../movie-grid/movie-grid-template.wxml"/>
+<view class="container" wx:if="{{readyShow}}">
+  <template is="movieGridTemplate" data="{{...moreMovies}}"/>
+</view> 

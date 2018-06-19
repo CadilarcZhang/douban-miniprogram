@@ -1,0 +1,23 @@
+<!-- 为模板指定一个名字，用于调用模板 -->
+<!-- 引入模板的wxml文件 -->
+<import src="collection-reading-template.wxml"/>
+<template name="post-item">
+  <view class="post-container">
+    <view class="post-author-date">
+      <image class="post-author" src="{{avatar}}"></image>
+      <text class="post-date">{{date}}</text>
+    </view>
+    <text class="post-title">{{idx+1}}、{{title}}</text>
+    <image class='post-image' src="{{imgSrc}}"></image>
+    <text class='post-content'>{{content}}</text>
+    <!-- 模板的图片路径要设置成绝对路径，不同的页面调用模板都能显示 -->
+    <!-- <view class='post-like'>
+      <image src='/images/icon/chat.png' class='post-star'></image>
+      <text class='post-star-num'>{{collection}}</text>
+      <image src='/images/icon/view.png' class="post-view"></image>
+      <text class='post-view-comment'>{{reading}}</text>
+    </view> -->
+    <!-- <template is="collection-reading" data="{{reviewAndCollect}}"></template> -->
+    <template is="collection-reading" data="{{collectionNum, readingNum, commentNum}}"></template>
+  </view>
+</template>

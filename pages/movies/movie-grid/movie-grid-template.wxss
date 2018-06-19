@@ -1,0 +1,15 @@
+@import "../movie-item/movie-template.wxss";
+
+.inner-view-container {
+  /* float: left; */
+  display: inline-block;
+}
+
+.grid-container {
+  height: 1300rpx;
+  margin: 40rpx 0 40rpx 30rpx;
+}
+
+/* .movie-scroll {
+  height: 1200rpx;
+} */

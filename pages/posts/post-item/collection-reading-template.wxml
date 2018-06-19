@@ -1,0 +1,15 @@
+<template name="collection-reading">
+  <view class='post-like'>
+      <!-- 模板的图片路径要设置成绝对路径，不同的页面调用模板都能显示 -->
+      <!-- <image src='/images/icon/chat.png' class='post-star'></image> -->
+      <image src="/images/icon/news/wx_app_collect.png" class='post-star'/>
+      <!-- <text class='post-star-num'>{{reviewAndCollect.collection}}</text> -->
+      <text class='post-star-num'>{{collectionNum}}</text>
+      <!-- <image src='/images/icon/view.png' class="post-view"></image> -->
+      <image src="/images/icon/news/wx_app_view.png" class="post-view"></image>
+      <!-- <text class='post-view-comment'>{{reviewAndCollect.reading}}</text> -->
+      <text class='post-view-num'>{{readingNum}}</text>
+      <image src="/images/icon/news/wx_app_message.png" class="post-comment"></image>
+      <text class='post-comment-num'>{{commentNum}}</text>
+    </view>
+</template>

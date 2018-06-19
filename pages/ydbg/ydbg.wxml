@@ -1,0 +1,9 @@
+<!--pages/ydbg/ydbg.wxml-->
+<view class="container">
+<!-- <web-view src="http://zxt.weixin.tunnel.qydev.com/MOAWeChat/mobile/oa/workflow/homeIndex?approveType=0"></web-view> -->
+<!-- <web-view class="container" src="https://m.youku.com/video/id_XMzQyNTQwODAwNA==.html?firsttime=0&source=&ishttps=1&from=singlemessage&vertical=1"></web-view> -->
+  <!-- <web-view src="{{webUrl}}" style="width: 100%; height: 100%;"></web-view>  -->
+ <!-- <web-view src="http://www.qq.com/"></web-view>  -->
+ <web-view src="{{webUrl}}"></web-view>
+</view>
+<!-- <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.0.js"></script> -->
