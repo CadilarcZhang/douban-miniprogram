@@ -33,7 +33,7 @@
 .movie-more image {
   width: 17rpx;
   height: 17rpx;
-  margin-top:6rpx;
+  margin-top:10rpx;
   margin-left:6rpx;
 }
 .movie-list {
@@ -55,5 +55,25 @@
   width: 32rpx;
   height: 32rpx;
   vertical-align: center;
+  /* animation: headRotate 1s linear infinite; */
   /* margin-left: 12rpx; */
+}
+
+.loading-img {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: center;
+  animation: headRotate 1s linear infinite;
+  /* margin-left: 12rpx; */
+}
+
+/* 加载图标旋转效果  */
+@keyframes headRotate{
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(180deg);}
+  100% {transform: rotate(360deg);}
+}
+
+.slogan .text-more {
+  font-weight: bold;
 }

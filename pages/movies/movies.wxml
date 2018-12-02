@@ -4,14 +4,16 @@
   <view class="search-area">
     <icon type="search" class="search-icon" size="13" color="#405f80" bindtap="onBindConfirm"></icon>
     <input type="text" value="{{keyword}}" placeholder="请搜索影片关键字或者电影类别" placeholder-class="placeholder"
-      bindfocus="onBindFocus" bindconfirm="onBindConfirm" bindblur="onBindConfirm"/>  
-    <image wx:if="{{searchPanelShow}}" class="cancel-icon" src="/images/icon/xx.png" bindtap="onCancelTap"></image>
+      bindfocus="onBindFocus" bindconfirm="onBindConfirm" bindblur="onSaveKeyword"/>  
+      <image wx:if="{{!searchPanelShow}}" class="user-avatar" src="{{userInfo.avatarUrl}}" catchtap="goIndex"/> 
+      <image wx:if="{{searchPanelShow}}" class="cancel-icon" src="/images/icon/xx.png" bindtap="onCancelTap"></image>
   </view>
+  <view class="main-container" style="height: {{contentHeight}}" catchtap="onBlurTap">
   <view class="container" wx:if="{{movieContainerShow}}">
-    <template is="movieList-template" data="{{...in_theaters}}"/>
-    <template is="movieList-template" data="{{...coming_soon}}"/>
-    <template is="movieList-template" data="{{...us_box}}"/>
-    <template is="movieList-template" data="{{...top250}}"/>
+    <template is="movieList-template" data="{{...in_theaters, refreshIconShow, loadingIconShow, clickMore}}"/>
+    <template is="movieList-template" data="{{...coming_soon, refreshIconShow, loadingIconShow, clickMore}}"/>
+    <template is="movieList-template" data="{{...us_box, refreshIconShow, loadingIconShow, clickMore}}"/>
+    <template is="movieList-template" data="{{...top250, refreshIconShow, loadingIconShow, clickMore}}"/>
     <!-- <template is="movieList-template" data="{{movies}}"/>   -->
     <!-- <block wx:for="{{movieList}}" wx:key="movie-list">
       <template is="movieList-template" data="{{...item, index}}"/>
@@ -21,6 +23,7 @@
   <view class="search-panel" wx:if="{{searchPanelShow}}">
     <template is="movieGridTemplate" data="{{...searchResult}}"/>
   </view>
+  
   <!-- 搜索框下面展示用户的历史搜索记录（关键词） -->
   <view class="history-container" wx:if="{{historyShow}}">
     <view class="history-hint" wx:if="{{hintShow}}">
@@ -28,8 +31,8 @@
       <text>历史搜索记录~</text>
     </view>
     <block wx:for="{{search_history_arr}}" wx:for-item="item" wx:key="keyword-list">
-      <view class="history-item" bindtap="onSearchTap" data-keyword="{{item}}">
-        <icon type="waiting" class="waiting-icon" size="13" color="#405f80" bindtap="onBindConfirm"></icon>
+      <view class="history-item" catchtap="onSearchTap" data-keyword="{{item}}">
+        <icon type="waiting" class="waiting-icon" size="13" color="#405f80" ></icon>
         <text>{{item}}</text>
         <icon type="clear" class="clear-icon" size="13" data-index="{{index}}" catchtap="onCancelItemTap"></icon>
       </view>
@@ -38,5 +41,6 @@
       <icon type="info" size="13" class="info-icon"></icon>
       <text>清除所有记录~</text>
     </view>
+  </view>
   </view>
 </view>

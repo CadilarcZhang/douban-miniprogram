@@ -85,9 +85,12 @@ Page({
 
   getUserInfo: function getUserInfo(e) {
     app.globalData.userInfo = e.detail.userInfo;
+    console.log(e.detail.userInfo);
+    wx.setStorageSync("userInfo", app.globalData.userInfo);
     this.setData({
       userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      hasUserInfo: true,
+      isShow: true
     });
   },
 

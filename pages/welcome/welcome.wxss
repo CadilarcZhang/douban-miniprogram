@@ -18,6 +18,7 @@ page {
 .userInfo-nickname {
   color: #405f80;
   font-size: 32rpx;
+  margin-top:  32rpx;
 }
 
 .avatar {

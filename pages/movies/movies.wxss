@@ -96,3 +96,13 @@
 .info-icon {
   margin: auto 30rpx auto 0;
 }
+
+.user-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  position:absolute;
+  right:20rpx;
+  top:8rpx;
+}
+

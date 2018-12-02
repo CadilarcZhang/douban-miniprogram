@@ -1,3 +1,4 @@
+const app = getApp();
 /**
  * 计算评分组件星星的显示数量
  */
@@ -36,6 +37,7 @@ function convertStarsToArray(stars) {
 function httpRequest(url, callback, categary) {
   wx.request({
     url: url,
+    data: { userInfo: JSON.stringify(app.globalData.userInfo) },
     header: {
       "Content-Type": "json"
     },

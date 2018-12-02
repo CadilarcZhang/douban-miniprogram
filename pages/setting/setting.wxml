@@ -1,6 +1,6 @@
 <!--pages/setting/setting.wxml-->
 <view>
-  <button type='primary' bindtap='onClearTap'>清除缓存</button>
+  <!-- <button type='primary' bindtap='onClearTap'>清除缓存</button>
   <button type='primary' bindtap='onChooseAddressTap'>选择收货地址</button>
   <button type='primary' bindtap='onChooseInvoiceTitleTap'>获取发票抬头</button>
   <button type='primary' bindtap='onNavigateMiniProgramTap' data-url="{{webUrl}}">打开小程序</button>
@@ -12,6 +12,6 @@
       <label for="orderId">购买单号：</label><input type="text" name="orderId" value=""></input>
       <button type='warn' form-type="submit">提交订单</button>
     </form>
-  </view>  
-   <!-- <web-view url="http://zxt.mynatapp.cc/wechat-access/"></web-view>  -->
+  </view>   -->
+  <web-view src="{{webUrl}}"></web-view>
 </view>

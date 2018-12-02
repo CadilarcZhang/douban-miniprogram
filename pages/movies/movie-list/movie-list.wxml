@@ -5,9 +5,10 @@
       <view class='movieList-header'>
         <text class="slogan">{{categary}}</text>
         <view class="refresh" data-type="{{type}}" data-start-num="{{startNum}}" 
-          data-categary="{{categary}}" catchtap="onReloadTap">
-          <image class="refresh-img" src="/images/icon/reload.png"></image>
-          <text>换一批</text>
+          data-cate-index="{{cateIndex}}" data-categary="{{categary}}" catchtap="onReloadTap">
+          <image wx:if="{{refreshIconShow[cateIndex]}}" class="refresh-img" src="/images/icon/reload.png"></image>
+          <image wx:if="{{loadingIconShow[cateIndex]}}" class="loading-img" src="/images/icon/loading3.png"></image>
+          <text>{{clickMore[cateIndex]}}</text>
         </view>
         <view class='movie-more' bindtap='onMoreMoviesTap' data-categary="{{categary}}">
           <text class="text-more">更多</text>

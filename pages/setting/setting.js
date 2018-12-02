@@ -12,7 +12,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.setData({
+      webUrl: "https://zxt.mynatapp.cc/wechat-access?timestamp=" + new Date().getTime()
+    });
+    wx.hideLoading();
   },
 
   /**

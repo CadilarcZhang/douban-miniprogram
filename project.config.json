@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.91",
 	"appid": "wxa7e52cd68e968cc6",
-	"projectname": "ReaderMovie",
+	"projectname": "doubanMiniProgram",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

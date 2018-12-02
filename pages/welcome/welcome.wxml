@@ -8,13 +8,13 @@
       <text class='userInfo-nickname'>{{userInfo.nickName}}</text>  
     </block>
   </view>
-  <text class='user-name'>
+  <text class='user-name' wx:if="{{isShow}}">
     {{miniprogram}}, 你好！
   </text>
   <!-- <image class='userinfo-avatar'> -->
     <!-- <open-data type="userNickName"></open-data> -->
   <!-- </image> -->
-  <view hover-class="index-hover" class='motto-container' bindtap="onContainerTap">
+  <view hover-class="index-hover" class='motto-container' bindtap="onContainerTap" wx:if="{{isShow}}">
     <!-- <open-data type="userNickName"></open-data>， -->
     <text catchtap="onSubTap">开启小程序之旅</text>
   </view>
