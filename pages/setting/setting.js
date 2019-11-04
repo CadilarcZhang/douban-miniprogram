@@ -1,4 +1,5 @@
 // pages/setting/setting.js
+const app = getApp();
 Page({
 
   /**
@@ -13,10 +14,20 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      webUrl: "https://zxt.mynatapp.cc/wechat-access?timestamp=" + new Date().getTime()
+        // webUrl: "https://zxt.mynatapp.cc/weixinAppServer?timestamp=" + new Date().getTime(),
+        webUrl: app.globalData.doubanBaseUrl + "?timestamp=" + new Date().getTime()
     });
     wx.hideLoading();
   },
+
+    onPageAuthTap: function(event) {
+        wx.request({
+            url: 'https://zxt.mynatapp.cc/weixinAppServer/callback',
+            sucess: function(res) {
+                console.log(res);
+            } 
+        })
+    },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

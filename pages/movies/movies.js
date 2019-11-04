@@ -126,11 +126,18 @@ Page({
                 wx.showModal({
                     title: '系统提示',
                     // content: '网络无法连接，请检查网络设置',
-                    content: res.errMsg
+                    content: res.errMsg,
+                    complete: function(res) {
+                        if (!res.cancel) {
+                            wx.redirectTo({
+                                url: '../welcome/welcome',
+                            });
+                        }
+                    }
                 });
-                wx.redirectTo({
-                    url: '../welcome/welcome',
-                });
+                // wx.navigateBack({
+                //     url: '../welcome/welcome',
+                // })
             },
             complete: function(res) {
 

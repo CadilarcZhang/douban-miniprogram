@@ -4,6 +4,7 @@
   <button type='primary' bindtap='onChooseAddressTap'>选择收货地址</button>
   <button type='primary' bindtap='onChooseInvoiceTitleTap'>获取发票抬头</button>
   <button type='primary' bindtap='onNavigateMiniProgramTap' data-url="{{webUrl}}">打开小程序</button>
+  <button type='primary' bindtap='onPageAuthTap'>微信网页授权</button>
   <view class='form-controller'>
     <form name="payForm" report-submit bindsubmit="orderSign">
       <label for="place">购买地点：</label><input type="text" name="place" value=""></input>
